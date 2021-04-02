@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    int numero= 1;
-    int *pNumero= &numero;
+    int numero = 1;
+    int *pNumero = &numero;
 
     printf("Contenido del puntero: %d\n", *pNumero);
 
