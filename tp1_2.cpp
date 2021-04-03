@@ -24,21 +24,41 @@ void invertir(int *a, int *b) {
     printf("Valor nuevo de segunda variable : %d\n", *b);
 }
 
+void orden(int *a, int *b) {
+    if (*a > *b) {
+        int aux1 = *a;
+        int aux2 = *b;
+        *a = aux2;
+        *b = aux1;
+        printf("Valor mas chico en a: %d\n", *a);
+        printf("Valor mas grande en b: %d\n", *b);
+    } else {
+        printf("Valor mas chico en a: %d\n", *a);
+        printf("Valor mas grande en b: %d\n", *b);
+    }
+}
+
 int main() {
-    int numero = 8;
+    int numero;
+    puts("Elija un numero");
+    scanf("%d", &numero);
     int *pNumero = &numero;
     // Calcular el cuadrado en una función INT
     int cuadradoNumero = cuadrado(numero);
-    printf("Cuadrado de 8 en una funcion int: %d\n", numero);
+    printf("Cuadrado del numero elejido en una funcion int: %d\n", cuadradoNumero);
     // Calcular el cuadrado en una función VOID
     cuadradoVoid(pNumero);
-    printf("Cuadrado de 8 en una funcion void: %d\n", *pNumero);
+    printf("Cuadrado del numero elejido en una funcion void: %d\n", *pNumero);
     // Invertir los valores de dos variables
-    int valor1 = 2;
-    int *pValor1 = &valor1;
-    int valor2 = 9;
-    int *pValor2 = &valor2;
-    invertir(pValor1, pValor2);
+    puts("Elija otro numero");
+    int numero2;
+    fflush(stdin);
+    scanf("%d", &numero2);
+    fflush(stdin);
+    int *pNumero2 = &numero2;
+    invertir(pNumero, pNumero2);
+    // Cambiar orden de mayor a menor
+    orden(pNumero, pNumero2);
     getchar();
     return 0;
 }
